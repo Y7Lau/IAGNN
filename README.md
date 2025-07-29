@@ -7,4 +7,4 @@
 2. Datasets will be downloaded into the default folder upon first execution.
 
 # How to run?
-python main.py
+'python main.py'
