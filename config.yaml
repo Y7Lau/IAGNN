@@ -1,0 +1,66 @@
+cora_GAT:
+  in_epoch: 80
+  seed: 44
+  learning_rate: 0.001
+  num_hidden: 128
+  num_proj_hidden: 128
+  drop_edge_rate_1: 0.2
+  drop_edge_rate_2: 0.4
+  drop_feature_rate_1: 0.3
+  drop_feature_rate_2: 0.4
+  tau: 0.4
+  
+cora_GraphSage:
+  in_epoch: 80
+  seed: 44
+  learning_rate: 0.01
+  num_hidden: 128
+  drop_edge_rate_1: 0.2
+  drop_edge_rate_2: 0.4
+  drop_feature_rate_1: 0.3
+  drop_feature_rate_2: 0.4
+  tau: 0.4
+
+citeseer_GAT:
+  in_epoch: 80
+  seed: 44
+  learning_rate: 0.001
+  num_hidden: 256
+  drop_edge_rate_1: 0.2
+  drop_edge_rate_2: 0.0
+  drop_feature_rate_1: 0.3
+  drop_feature_rate_2: 0.2
+  tau: 0.9
+  
+citeseer_GraphSage:
+  in_epoch: 80
+  seed: 44
+  learning_rate: 0.01
+  num_hidden: 256
+  drop_edge_rate_1: 0.2
+  drop_edge_rate_2: 0.0
+  drop_feature_rate_1: 0.3
+  drop_feature_rate_2: 0.2
+  tau: 0.9
+
+pubmed_GAT:
+  in_epoch: 15
+  seed: 44
+  learning_rate: 0.001
+  num_hidden: 128
+  drop_edge_rate_1: 0.4
+  drop_edge_rate_2: 0.1
+  drop_feature_rate_1: 0.0
+  drop_feature_rate_2: 0.2
+  tau: 0.7
+  
+pubmed_GraphSage:
+  in_epoch: 15
+  seed: 44
+  learning_rate: 0.001
+  num_hidden: 128
+  drop_edge_rate_1: 0.4
+  drop_edge_rate_2: 0.1
+  drop_feature_rate_1: 0.0
+  drop_feature_rate_2: 0.2
+  tau: 0.7
