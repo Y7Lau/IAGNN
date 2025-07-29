@@ -227,7 +227,7 @@ def train(epoch, data):
 def test(model, data):
     model.eval()
     
-    # 获取模型预测结果
+
     out = model(data.x, data.edge_index)
     y_pred = out.argmax(dim=-1, keepdim=False)
     results = metric(data, y_pred)
