@@ -211,22 +211,14 @@ checkpoint = torch.load(f'./param/PT_param/{args.dataset}/{args.dataset}_model.p
                         map_location=device)
 model.load_state_dict(checkpoint['model'], strict=True)
 model.to(device)
-# 使用示例
-print("开始为高置信度无标记节点打伪标签...")
+
 
 class_thresholds = get_class_thresholds(args.dataset, args.net)
 
 labeling_info = label_high_confidence_nodes(model, data, class_thresholds, default_threshold=0.4) #pubmed:0.4
 
-# 打印结果
-print(f"\n伪标签结果统计:")
-print(f"新增伪标签数量: {labeling_info['total_new_labels']}")
-print(f"全局伪标签准确率: {labeling_info['global_accuracy']:.2%}")
-print("\n各类别准确率:")
-for cls, acc in labeling_info['class_accuracy'].items():
-    print(f"class {cls}: {acc:.2%} (sample: {labeling_info['class_distribution'][cls]})")
 
-# 保存增强后的数据
+
 torch.save(data,f'./output/Data_Augmentation/{args.net}/{dataname}/data_0.2.pt')
 
 unlabeled_mask = ~(data.train_mask | data.val_mask | data.test_mask)
@@ -243,7 +235,7 @@ for c in range(num_classes):
     Q = ((data.y == c) & data.test_mask).sum().item()
     print(f"{c:<10} {total:<10} {T:<10} {V:<10} {Q:<10}")
 print("=" * 50)
-print(f"\n=== 候选节点评估 ===")
+
 
 
 
